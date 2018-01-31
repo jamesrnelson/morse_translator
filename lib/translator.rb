@@ -1,3 +1,5 @@
+require 'pry'
+
 class Translator
   attr_reader :dictionary
 
@@ -40,4 +42,16 @@ class Translator
                     "0" => "-----",
                     " " => " "}
   end
+
+  def eng_to_morse(string)
+    letters = string.downcase.split("")
+    translation = letters.map {|letter| dictionary[letter]}
+    translation.join
+  end
+
+
+
 end
+# translator = Translator.new
+# binding.pry
+# translator.eng_to_morse("hello world")
