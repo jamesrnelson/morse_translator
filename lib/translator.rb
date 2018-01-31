@@ -54,12 +54,15 @@ class Translator
     contents = file.read
     eng_to_morse(contents)
   end
-
-  def morse_to_eng
+translator = Translator.new
+  def morse_to_eng(morse_string)
+    morse_letters = morse_string.split
+    english_translation = morse_letters.map {|morse_letter| dictionary.key(morse_letter)}
+    english_translation.join
 
   end
 
 end
-# translator = Translator.new
-# binding.pry
-# translator.eng_to_morse("hello world")
+translator = Translator.new
+binding.pry
+translator.eng_to_morse("hello world")
