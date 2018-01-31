@@ -49,7 +49,15 @@ class Translator
     translation.join
   end
 
+  def from_file(file_name)
+    file = File.open(file_name, "r")
+    contents = file.read
+    eng_to_morse(contents)
+  end
 
+  def morse_to_eng
+
+  end
 
 end
 # translator = Translator.new
